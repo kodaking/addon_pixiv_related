@@ -1,7 +1,5 @@
 (() => {
   chrome.runtime.onMessage.addListener((message) => {
-    console.log("inject");
-
     // 変更処理
     main();
   });
@@ -69,7 +67,6 @@ function genelateColor() {
 // ======================書き換え処理 ===================
 
 function main () {
-  getElements("title", (e) => { e.innerHTML = "test";})
 
   const url = new URL(location.href);
   const page = url.searchParams.get('p');
