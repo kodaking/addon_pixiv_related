@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "pixiv_related",
+  "version": "0.1",
+  "description": "関連してる作品に色つけるやーつ(dev)",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "icons" : {
+    "128": "icon.png"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [{
+     "matches": [
+          "https://www.pixiv.net/search*"
+      ],
+      "js": [
+        "js/injector.js"
+      ]
+  }],
+  "web_accessible_resources": [
+  ],
+  "permissions": [
+    "tabs", "activeTab",
+    "https://www.pixiv.net/search*"
+  ]
+}
